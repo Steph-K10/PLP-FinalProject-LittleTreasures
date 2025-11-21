@@ -1,0 +1,4 @@
+/*tailwind cdn used when packages had issues*/
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
