@@ -136,7 +136,13 @@ const HeroSection = () => {
             ? 'opacity-100' 
             : 'opacity-0'
         }`}>
-          <button className="bg-gradient-to-r from-green-500 to-green-600 hover:from-green-400 hover:to-green-500 text-white px-10 py-3 rounded-full font-bold text-base transition-all duration-300 transform hover:scale-105 shadow-xl border border-green-400/20 backdrop-blur-sm mb-3">
+          <button 
+            onClick={() => {
+              sessionStorage.setItem('scrollToVolunteer', 'true');
+              document.getElementById('volunteer')?.scrollIntoView({ behavior: 'smooth' });
+            }}
+            className="bg-gradient-to-r from-green-500 to-green-600 hover:from-green-400 hover:to-green-500 text-white px-10 py-3 rounded-full font-bold text-base transition-all duration-300 transform hover:scale-105 shadow-xl border border-green-400/20 backdrop-blur-sm mb-3"
+          >
             Join Our Mission
           </button>
         </div>
