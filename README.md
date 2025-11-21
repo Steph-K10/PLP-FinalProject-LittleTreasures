@@ -5,7 +5,7 @@ A decentralized, tech-enabled solution to urban food insecurity in Nairobi. This
 > **Final Project** - Power Learn Project (PLP) July 2025 Cohort, Full Stack MERN Specialization
 
 ## 🚀 Live Demo
-- **Frontend**: [Coming soon - Vercel deployment]
+- **Frontend**: [ Vercel](https://little-treasures-livid.vercel.app/)
 - **Backend**: [Render](https://little-treasures-backend-a7xj.onrender.com)
 
 ## 📋 Project Overview

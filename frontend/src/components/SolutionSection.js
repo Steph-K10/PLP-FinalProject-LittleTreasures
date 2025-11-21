@@ -108,7 +108,10 @@ const SolutionSection = () => {
           <p className="text-xl mb-8 max-w-2xl mx-auto opacity-95">
             Be part of the solution to food insecurity in Nairobi. Your time and skills can help nourish communities and preserve dignity.
           </p>
-          <button className="bg-white text-green-700 px-10 py-4 rounded-full font-bold text-lg hover:bg-green-50 transition-all duration-300 transform hover:scale-105 shadow-lg">
+          <button
+            onClick={() => document.getElementById('volunteer').scrollIntoView({ behavior: 'smooth' })}
+            className="bg-white text-green-700 px-10 py-4 rounded-full font-bold text-lg hover:bg-green-50 transition-all duration-300 transform hover:scale-105 shadow-lg"
+          >
             Become a Volunteer
           </button>
           <div className="mt-10 text-center">

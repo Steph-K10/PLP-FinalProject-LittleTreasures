@@ -22,6 +22,12 @@ router.get('/', async (req, res) => {
 
 // POST new volunteer (registration)
 router.post('/', async (req, res) => {
+  console.log('=== VOLUNTEER REGISTRATION DEBUG ===');
+  console.log('Received data:', JSON.stringify(req.body, null, 2));
+  console.log('Secondary locations:', req.body.secondaryLocations);
+  console.log('Primary location:', req.body.primaryLocation);
+  console.log('====================================');
+
   try {
     const volunteer = new Volunteer(req.body);
     const savedVolunteer = await volunteer.save();
@@ -37,6 +43,11 @@ router.post('/', async (req, res) => {
     
     res.status(201).json(savedVolunteer);
   } catch (error) {
+    console.log('=== ERROR DETAILS ===');
+    console.log('Error message:', error.message);
+    console.log('Error validation errors:', error.errors);
+    console.log('=====================');
+    
     if (error.code === 11000) {
       res.status(400).json({ message: 'Email already registered' });
     } else {

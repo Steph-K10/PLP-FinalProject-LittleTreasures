@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import TeamSection from './TeamSection';
 import ProjectTimeline from './ProjectTimeline';
 import NairobiMap from './NairobiMap';
@@ -127,12 +128,16 @@ const AboutPage = () => {
           <p className="text-xl mb-8 opacity-95">
             Join our growing community of volunteers and help us fight food insecurity in Nairobi.
           </p>
-          <a 
-            href="#volunteer"
+          
+          <Link 
+            to="/" 
             className="inline-block bg-white text-green-700 px-8 py-4 rounded-full font-bold text-lg hover:bg-gray-100 transition-all duration-300 transform hover:scale-105 shadow-lg"
+            onClick={() => {
+              sessionStorage.setItem('scrollToVolunteer', 'true');
+            }}
           >
             Become a Volunteer
-          </a>
+          </Link>
         </div>
       </section>
 

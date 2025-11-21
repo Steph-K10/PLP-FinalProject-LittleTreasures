@@ -168,15 +168,27 @@ const VolunteerRegistration = () => {
             </label>
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 max-h-48 overflow-y-auto p-3 border border-gray-300 rounded-lg">
               {locationData.allZones.map(zone => (
-                <label key={zone} className="flex items-center text-sm">
+                <label 
+                  key={zone} 
+                  className={`flex items-center text-sm ${
+                    formData.primaryLocation === zone ? 'opacity-50 cursor-not-allowed' : ''
+                  }`}
+                >
                   <input
                     type="checkbox"
                     checked={formData.secondaryLocations.includes(zone)}
                     onChange={() => handleSecondaryLocationChange(zone)}
-                    disabled={formData.secondaryLocations.length >= 3 && !formData.secondaryLocations.includes(zone)}
-                    className="mr-2 text-green-600 focus:ring-green-500"
+                    disabled={
+                      formData.secondaryLocations.length >= 3 && !formData.secondaryLocations.includes(zone) || 
+                      formData.primaryLocation === zone  // ← ADD THIS LINE
+                    }
+                    className={`mr-2 text-green-600 focus:ring-green-500 ${
+                      formData.primaryLocation === zone ? 'cursor-not-allowed' : ''
+                    }`}
                   />
-                  {zone}
+                  <span className={formData.primaryLocation === zone ? 'text-gray-400' : 'text-gray-700'}>
+                    {zone}
+                  </span>
                 </label>
               ))}
             </div>

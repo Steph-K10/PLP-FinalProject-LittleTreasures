@@ -1,5 +1,14 @@
 const mongoose = require('mongoose');
 
+// Define the locations array once to ensure consistency
+const locations = [
+  'Kawangware', 'Kibera', 'Kangemi', 'Langata',
+  'Mathare', 'Huruma', 'Eastleigh', 
+  'Githurai', 'Kahawa West',
+  'Dandora', 'Kayole', 
+  'Mukuru kwa Njenga'
+];
+
 const volunteerSchema = new mongoose.Schema({
   name: {
     type: String,
@@ -20,23 +29,11 @@ const volunteerSchema = new mongoose.Schema({
   primaryLocation: {
     type: String,
     required: true,
-    enum: [
-      'Kawangware', 'Kibera', 'Kangemi', 'Langata',
-      'Mathare', 'Huruma', 'Eastleigh', 
-      'Githurai', 'Roysambu', 'Kariobangi',
-      'Dandora', 'Kayole', 'Umoja', 'Embakasi',
-      'Mukuru kwa Njenga', 'Mukuru Kwa Reuben'
-    ]
+    enum: locations  // ← Using the shared array
   },
-  secondaryLocations: [{
+  secondaryLocations: [{  // ← Fixed: This is an array of strings
     type: String,
-    enum: [
-      'Kawangware', 'Kibera', 'Kangemi', 'Langata',
-      'Mathare', 'Huruma', 'Eastleigh', 
-      'Githurai', 'Roysambu', 'Kariobangi',
-      'Dandora', 'Kayole', 'Umoja', 'Embakasi',
-      'Mukuru kwa Njenga', 'Mukuru Kwa Reuben'
-    ]
+    enum: locations  // ← Using the shared array
   }],
   availability: {
     type: String,
