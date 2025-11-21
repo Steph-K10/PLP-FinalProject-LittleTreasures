@@ -23,7 +23,7 @@ const ProblemStatement = () => {
       icon: '🌱',
       title: 'Politicization of Aid',
       description: 'Food disbursements are sometimes tied to political agendas, forcing recipients to trade their time and dignity for basic sustenance at rallies and events.',
-      image: '/images/problem/politicization.jpg'
+      image: '/images/problem/politicization.JPG'
     }
   ];
 
