@@ -8,8 +8,11 @@ const AdminNotifications = () => {
   const [visible, setVisible] = useState(false);
 
   useEffect(() => {
-    // Connect to Socket.io server
-    const newSocket = io('http://localhost:5000');
+    // Connect to Socket.io server-now using deployed backend URL
+    const newSocket = io('https://little-treasures-backend-a7xj.onrender.com', {
+      withCredentials: true,
+      transports: ['websocket', 'polling'] // Important for production
+    });
     setSocket(newSocket);
 
     // Listen for new volunteer notifications
@@ -33,6 +36,19 @@ const AdminNotifications = () => {
           )
         );
       }, 5000);
+    });
+
+     // Add connection event handlers for debugging
+    newSocket.on('connect', () => {
+      console.log('✅ Connected to server successfully');
+    });
+
+    newSocket.on('connect_error', (error) => {
+      console.error('❌ Socket connection error:', error);
+    });
+
+    newSocket.on('disconnect', (reason) => {
+      console.log('🔌 Disconnected from server:', reason);
     });
 
     // Clean up on unmount

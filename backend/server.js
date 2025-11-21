@@ -8,17 +8,35 @@ require('dotenv').config();
 const app = express();
 const PORT = process.env.PORT || 5000;
 
+// CORS configuration for Express- to fix socket only deploying from local
+app.use(cors({
+  origin: [
+    "https://little-treasures-livid.vercel.app",
+    "http://localhost:3000",
+    "https://little-treasures.vercel.app" // custom domain
+  ],
+  credentials: true,
+  methods: ['GET', 'POST', 'PUT', 'DELETE']
+}));
+
 // Create HTTP server for Socket.io
 const server = http.createServer(app);
+
+// Socket.IO configuration with proper CORS
 const io = socketIo(server, {
   cors: {
-    origin: "http://localhost:3000",
-    methods: ["GET", "POST"]
+    origin: [
+      "https://little-treasures-livid.vercel.app",
+      "http://localhost:3000",
+      "https://little-treasures.vercel.app"
+    ],
+    methods: ["GET", "POST"],
+    credentials: true,
+    transports: ['websocket', 'polling']
   }
 });
 
 // Middleware
-app.use(cors());
 app.use(express.json());
 
 // MongoDB Connection
@@ -80,4 +98,8 @@ app.get('/api/health', (req, res) => {
 server.listen(PORT, () => {
   console.log(`🚀 Server is running on http://localhost:${PORT}`);
   console.log('🔌 Socket.io is ready for real-time connections');
+  console.log('🌐 Allowed origins:', [
+    "https://little-treasures-livid.vercel.app",
+    "http://localhost:3000"
+  ]);
 });
