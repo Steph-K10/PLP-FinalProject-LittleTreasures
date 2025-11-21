@@ -1,6 +1,6 @@
 const config = {
   apiUrl: process.env.NODE_ENV === 'production' 
-    ? 'https://your-backend-url.onrender.com' // We'll update this later
+    ? 'https://little-treasures-backend-a7xj.onrender.com' //render backend URL
     : 'http://localhost:5000'
 };
 

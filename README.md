@@ -6,7 +6,7 @@ A decentralized, tech-enabled solution to urban food insecurity in Nairobi. This
 
 ## 🚀 Live Demo
 - **Frontend**: [Coming soon - Vercel deployment]
-- **Backend**: [Coming soon - Render deployment]
+- **Backend**: [Render](https://little-treasures-backend-a7xj.onrender.com)
 
 ## 📋 Project Overview
 Little Treasures addresses food insecurity through a two-pronged approach:
@@ -142,7 +142,7 @@ vercel --prod
 Stephanie Khaguli - Project Lead & Full Stack Developer
 
 ## 📄 License
-This project is licensed under the GNU General Public License v3.0 - see the [LICENSE file](PLP-FinalProject-LittleTreasures/LICENSE) for details.
+This project is licensed under the GNU General Public License v3.0 - see the [LICENSE](LICENSE) file for details.
 
 ## 🙏 Acknowledgments
 - Power Learn Project (PLP) for the learning opportunity and entrepreneural focus
