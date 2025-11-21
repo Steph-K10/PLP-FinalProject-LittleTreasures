@@ -60,19 +60,22 @@ This Phase 1 web application focuses on volunteer registration and community awa
 - Location preference selection (primary & secondary)
 
 ## 🏗️ Project Structure
+
+```
 little-treasures/
 ├── frontend/
-│ ├── src/
-│ │ ├── components/ # React components
-│ │ ├── utils/ # Helper functions & data
-│ │ └── config/ # Configuration files
-│ └── public/ # Static assets
+│   ├── src/
+│   │   ├── components/          # React components
+│   │   ├── utils/               # Helper functions & data
+│   │   └── config/              # Configuration files
+│   └── public/                  # Static assets
 ├── backend/
-│ ├── models/ # MongoDB schemas
-│ ├── routes/ # API routes
-│ ├── config/ # Database configuration
-│ └── server.js # Express server
+│   ├── models/                  # MongoDB schemas
+│   ├── routes/                  # API routes
+│   ├── config/                  # Database configuration
+│   └── server.js                # Express server
 └── README.md
+```
 
 
 ## 🚀 Installation & Setup
